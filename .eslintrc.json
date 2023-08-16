@@ -1,3 +1,8 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    // Definir une variable non utiliser
+    "no-unused-vars":"error",
+    "indent":["error",2]
+  }
 }
