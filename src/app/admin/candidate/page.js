@@ -10,5 +10,5 @@ export default function Candidate() {
   //Ajouter dans la dase de donné
   // const addItem = async (event) => {};
 
-  return <div>Layoute</div>;
+  return <div>candidate</div>;
 }
