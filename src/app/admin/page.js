@@ -6,6 +6,58 @@ import { MdOutlineEventNote } from "react-icons/md";
 import { BiSolidUser } from "react-icons/bi";
 
 import Card from "./components/_dashboard/Card";
+// data={dataCandidat} thead={thead}
+const thead = [
+  { title1: "CANDIDAT " },
+  { title1: "NOMBRE DE VOTE " },
+  { title1: "NOMBRE DE J'AIME " },
+  { title1: "TENDANCES " },
+];
+
+const dataCandidat = [
+  {
+    nom: "Vera ",
+    prenom: "Carpenter",
+    image: "uploads/001.png",
+    like: "2020",
+    dislike: "",
+  },
+  {
+    nom: "Vera ",
+    prenom: "Carpenter",
+    image: "uploads/005.png",
+    like: "2020",
+    dislike: "",
+  },
+  {
+    nom: "Vera ",
+    prenom: "Carpenter",
+    image: "uploads/006.png",
+    like: "2020",
+    dislike: "",
+  },
+  {
+    nom: "Vera ",
+    prenom: "Carpenter",
+    image: "uploads/008.png",
+    like: "2020",
+    dislike: "",
+  },
+  {
+    nom: "Alonzo ",
+    prenom: "Carpenter",
+    image: "uploads/009.png",
+    like: "2020",
+    dislike: "",
+  },
+  {
+    nom: "Dana ",
+    prenom: "Moore",
+    image: "uploads/0011.png",
+    like: "2020",
+    dislike: "",
+  },
+];
 
 const CardData = [
   { title: "Vote max", icon: MdOutlineNavigateNext, libelle: "40%" },
@@ -40,7 +92,7 @@ export default function Home() {
               />
             ))}
           </div>
-          <Tableau/>
+          <Tableau data={dataCandidat} thead={thead}/>
         </div>
       </div>
       
