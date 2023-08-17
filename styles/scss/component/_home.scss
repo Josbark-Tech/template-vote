@@ -1,0 +1,11 @@
+.container{
+    &--intro{
+        background: url('../../../public/img/singer.jpg') round;
+        min-height: 45vh;
+        width: 100%;
+
+        .voice-presentation{
+            
+        }
+    }
+}
