@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Cookies from "js-cookie";
 // import { Link } from "react-router-dom";
 // import { useFormik, Form, FormikProvider } from "formik";
 //import Link from "next/link";
@@ -19,26 +20,13 @@ const Login = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    /*
-    const data = await signIn("credentials", {
-      email,
-      password,
-      redirect: false,
-    });*/
-
+  
     handleShowPassword();
-    //console.log(data);
+    //console.log(data);Cookies.remove('name')
     console.log(email, password);
     router.push("/admin");
+    Cookies.set("loggedin", "true");
 
-    /*
-    if (data?.error) {
-      toast.error(data?.error);
-    }
-
-    if (data?.ok) {
-      router.push("/");
-    }*/
   };
 
 
