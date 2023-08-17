@@ -2,9 +2,48 @@ import React from "react";
 
 import Image from "next/image";
 
-export default function Tbody() {
+export default function Tbody({ data }) {
   return (
     <tbody>
+      {data.map((item, index) => (
+        <tr key={index}>
+          <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <div className="flex items-center">
+              <div className="flex-shrink-0 w-10 h-10">
+                <Image
+                  src={item.image}
+                  alt="Vercel Logo"
+                  className="w-full h-full rounded-full"
+                  width={100}
+                  height={100}
+                  priority
+                />
+              </div>
+              <div className="ml-3">
+                <p className="text-gray-900 whitespace-no-wrap">
+                  {item.prenom}
+                </p>
+              </div>
+            </div>
+          </td>
+          <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <p className="text-gray-900 whitespace-no-wrap">{item.vote}</p>
+          </td>
+          <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <p className="text-gray-900 whitespace-no-wrap">{item.like}</p>
+          </td>
+          <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+              <span
+                aria-hidden
+                className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
+              ></span>
+              <span className="relative">Bien</span>
+            </span>
+          </td>
+        </tr>
+      ))}
+      {/* 
       <tr>
         <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
           <div className="flex items-center">
@@ -138,7 +177,7 @@ export default function Tbody() {
             <span className="relative"> Eliminé</span>
           </span>
         </td>
-      </tr>
+      </tr> */}
     </tbody>
   );
 }

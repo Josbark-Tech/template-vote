@@ -18,8 +18,8 @@ export default function Tableau({data, thead}) {
             <div className="flex flex-row mb-1 sm:mb-0">
               <div className="relative">
                 <select className="appearance-none h-full rounded-l border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                  <option>5</option>
                   <option>10</option>
+                  <option>15</option>
                   <option>20</option>
                 </select>
               </div>
@@ -48,8 +48,8 @@ export default function Tableau({data, thead}) {
           <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
             <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
               <table className="min-w-full leading-normal">
-                <Thead />
-                <Tbody/>
+                <Thead thead={thead} />
+                <Tbody data={data}/>
               </table>
               <div className="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
                 <span className="text-xs xs:text-sm text-gray-900">
