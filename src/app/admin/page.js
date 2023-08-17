@@ -1,28 +1,32 @@
 "use client";
 import Main from "./components/layouts/Page";
 import Tableau from "./components/Tableau";
+import { MdOutlineNavigateNext } from "react-icons/md";
+import { MdOutlineEventNote } from "react-icons/md";
+import { BiSolidUser } from "react-icons/bi";
+
 
 import Card from "./components/_dashboard/Card";
 const CardData = [
-  { title: "Vote max", svgdescription: "", libelle: "40%" },
-  { title: "Connecter", svgdescription: "", libelle: "1000K" },
-  { title: "Candidate", svgdescription: "", libelle: "100" },
-  { title: "Electeur", svgdescription: "", libelle: "1000M" },
+  { title: "Vote max", icon: MdOutlineNavigateNext, libelle: "40%" },
+  { title: "Connecter", icon: MdOutlineEventNote, libelle: "1000K" },
+  { title: "Candidate", icon: BiSolidUser, libelle: "100" },
+  { title: "Electeur", icon: BiSolidUser, libelle: "1000M" },
 ];
 export default function Home() {
   return (
     <Main>
-      <div class="h-full w-full m-4 flex flex-wrap items-start justify-start rounded-tl grid-flow-col auto-cols-max gap-4 overflow-y-scroll">
-        <div class="container items-center px-4 py-8 m-auto mt-5">
-          <div class="flex flex-wrap pb-3 mx-4 md:mx-24 lg:mx-0">
-            <ul class="w-full sm:w-4/5 text-xs sm:text-sm justify-center lg:justify-end items-center flex flex-row space-x-1 mt-6 overflow-hidden mb-4">
+      <div className="h-full w-full m-4 flex flex-wrap items-start justify-start rounded-tl grid-flow-col auto-cols-max gap-4 overflow-y-scroll">
+        <div className="container items-center px-4 py-8 m-auto mt-5">
+          <div className="flex flex-wrap pb-3 mx-4 md:mx-24 lg:mx-0">
+            <ul className="w-full sm:w-4/5 text-xs sm:text-sm justify-center lg:justify-end items-center flex flex-row space-x-1 mt-6 overflow-hidden mb-4">
               <li>
-                <button class="px-4 py-2 bg-indigo-500 rounded-full text-sm text-gray-100 hover:bg-indigo-700 hover:text-gray-200">
+                <button className="px-4 py-2 bg-indigo-500 rounded-full text-sm text-gray-100 hover:bg-indigo-700 hover:text-gray-200">
                   Activer le vote
                 </button>
               </li>
               <li>
-                <button class="px-4 py-2 bg-gray-200 rounded-full text-sm text-gray-700 hover:bg-indigo-700 hover:text-gray-200">
+                <button className="px-4 py-2 bg-gray-200 rounded-full text-sm text-gray-700 hover:bg-indigo-700 hover:text-gray-200">
                   90 days
                 </button>
               </li>
@@ -31,28 +35,28 @@ export default function Home() {
               <Card
                 key={key}
                 title={item.title}
-                svgdescription={item.svgdescription}
+                Icone={item.icon}
                 libelle={item.libelle}
               />
             ))}
         
-            <div class="w-full p-2 lg:w-1/4 md:w-1/2">
-              <div class="flex flex-col px-6 py-10 overflow-hidden bg-white hover:bg-gradient-to-br hover:from-purple-400 hover:via-blue-400 hover:to-blue-500 rounded-xl shadow-lg duration-300 hover:shadow-2xl group">
-                <div class="flex flex-row justify-between items-center">
-                  <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
+            <div className="w-full p-2 lg:w-1/4 md:w-1/2">
+              <div className="flex flex-col px-6 py-10 overflow-hidden bg-white hover:bg-gradient-to-br hover:from-purple-400 hover:via-blue-400 hover:to-blue-500 rounded-xl shadow-lg duration-300 hover:shadow-2xl group">
+                <div className="flex flex-row justify-between items-center">
+                  <div className="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-6 w-6 group-hover:text-gray-50"
+                      className="h-6 w-6 group-hover:text-gray-50"
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
                       <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
                     </svg>
                   </div>
-                  <div class="inline-flex text-sm text-gray-600 group-hover:text-gray-200 sm:text-base">
+                  <div className="inline-flex text-sm text-gray-600 group-hover:text-gray-200 sm:text-base">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-6 w-6 mr-2 text-green-500 group-hover:text-gray-200"
+                      className="h-6 w-6 mr-2 text-green-500 group-hover:text-gray-200"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -67,15 +71,15 @@ export default function Home() {
                     12%
                   </div>
                 </div>
-                <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 group-hover:text-gray-50">
+                <h1 className="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 group-hover:text-gray-50">
                   42.34%
                 </h1>
-                <div class="flex flex-row justify-between group-hover:text-gray-200">
+                <div className="flex flex-row justify-between group-hover:text-gray-200">
                   <p>Page Per Visits</p>
                   <span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5 text-indigo-600 group-hover:text-gray-200"
+                      className="h-5 w-5 text-indigo-600 group-hover:text-gray-200"
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
@@ -89,13 +93,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div class="w-full p-2 lg:w-1/4 md:w-1/2">
-              <div class="flex flex-col px-6 py-10 overflow-hidden bg-white hover:bg-gradient-to-br hover:from-purple-400 hover:via-blue-400 hover:to-blue-500 rounded-xl shadow-lg duration-300 hover:shadow-2xl group">
-                <div class="flex flex-row justify-between items-center">
-                  <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
+            <div className="w-full p-2 lg:w-1/4 md:w-1/2">
+              <div className="flex flex-col px-6 py-10 overflow-hidden bg-white hover:bg-gradient-to-br hover:from-purple-400 hover:via-blue-400 hover:to-blue-500 rounded-xl shadow-lg duration-300 hover:shadow-2xl group">
+                <div className="flex flex-row justify-between items-center">
+                  <div className="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-6 w-6 group-hover:text-gray-50"
+                      className="h-6 w-6 group-hover:text-gray-50"
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
@@ -107,10 +111,10 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <div class="inline-flex text-sm text-gray-600 group-hover:text-gray-200 sm:text-base">
+                  <div className="inline-flex text-sm text-gray-600 group-hover:text-gray-200 sm:text-base">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-6 w-6 mr-2 text-green-500 group-hover:text-gray-200"
+                      className="h-6 w-6 mr-2 text-green-500 group-hover:text-gray-200"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -125,15 +129,15 @@ export default function Home() {
                     12%
                   </div>
                 </div>
-                <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 group-hover:text-gray-50">
+                <h1 className="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 group-hover:text-gray-50">
                   42.34k
                 </h1>
-                <div class="flex flex-row justify-between group-hover:text-gray-200">
+                <div className="flex flex-row justify-between group-hover:text-gray-200">
                   <p>Total Monthly Visits</p>
                   <span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5 text-indigo-600 group-hover:text-gray-200"
+                      className="h-5 w-5 text-indigo-600 group-hover:text-gray-200"
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
@@ -147,13 +151,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div class="w-full p-2 lg:w-1/4 md:w-1/2">
-              <div class="flex flex-col px-6 py-10 overflow-hidden bg-white hover:bg-gradient-to-br hover:from-purple-400 hover:via-blue-400 hover:to-blue-500 rounded-xl shadow-lg duration-300 hover:shadow-2xl group">
-                <div class="flex flex-row justify-between items-center">
-                  <div class="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
+            <div className="w-full p-2 lg:w-1/4 md:w-1/2">
+              <div className="flex flex-col px-6 py-10 overflow-hidden bg-white hover:bg-gradient-to-br hover:from-purple-400 hover:via-blue-400 hover:to-blue-500 rounded-xl shadow-lg duration-300 hover:shadow-2xl group">
+                <div className="flex flex-row justify-between items-center">
+                  <div className="px-4 py-4 bg-gray-300  rounded-xl bg-opacity-30">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-6 w-6 group-hover:text-gray-50"
+                      className="h-6 w-6 group-hover:text-gray-50"
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
@@ -164,10 +168,10 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <div class="inline-flex text-sm text-gray-600 group-hover:text-gray-200 sm:text-base">
+                  <div className="inline-flex text-sm text-gray-600 group-hover:text-gray-200 sm:text-base">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-6 w-6 mr-2 text-green-500 group-hover:text-gray-200"
+                      className="h-6 w-6 mr-2 text-green-500 group-hover:text-gray-200"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -182,15 +186,15 @@ export default function Home() {
                     12%
                   </div>
                 </div>
-                <h1 class="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 group-hover:text-gray-50">
+                <h1 className="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-700 mt-12 group-hover:text-gray-50">
                   00:03:20%
                 </h1>
-                <div class="flex flex-row justify-between group-hover:text-gray-200">
+                <div className="flex flex-row justify-between group-hover:text-gray-200">
                   <p>Avg. Visit Duration</p>
                   <span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5 text-indigo-600 group-hover:text-gray-200"
+                      className="h-5 w-5 text-indigo-600 group-hover:text-gray-200"
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >

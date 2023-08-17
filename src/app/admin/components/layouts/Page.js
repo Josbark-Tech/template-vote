@@ -9,14 +9,14 @@ import Header from "./Header";
 export default function Page({ children }) {
   return (
     // <!-- component -->
-    <div class="h-screen w-full bg-white relative flex overflow-hidden">
+    <div className="h-screen w-full bg-white relative flex overflow-hidden">
       <Siderbar />
-      <div class="w-full h-full flex flex-col justify-between">
+      <div className="w-full h-full flex flex-col justify-between">
         {/* <!-- Header --> */}
         <Header />
         {/* <!-- Main --> */}
 
-        <main class="max-w-full h-full flex relative overflow-y-hidden">
+        <main className="max-w-full h-full flex relative overflow-y-hidden">
           {/* <!-- Container --> */}
           {children}
           

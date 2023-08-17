@@ -18,13 +18,13 @@ const listMenu = [
 export default function Siderbar() {
   // const [isOpen, setIsOpen] = useState(false);
   // const [active, setActive] = useState("home");
-  console.log(listMenu);
+  // console.log(listMenu);
 
   return (
-    <aside class="h-full w-16 flex flex-col space-y-10 items-center justify-center relative bg-gray-800 text-white">
+    <aside className="h-full w-16 flex flex-col space-y-10 items-center justify-center relative bg-gray-800 text-white">
       {listMenu.map((item, key) => (
         <Link  href={item.link} key={key}>
-          <div class="h-10 w-10 flex items-center justify-center rounded-lg cursor-pointer hover:text-gray-800 hover:bg-black hover:duration-300 hover:ease-linear focus:bg-white">
+          <div className="h-10 w-10 flex items-center justify-center rounded-lg cursor-pointer hover:text-gray-800 hover:bg-black hover:duration-300 hover:ease-linear focus:bg-white">
             <item.icon size={36} className="text-white" />
           </div>
         </Link>
