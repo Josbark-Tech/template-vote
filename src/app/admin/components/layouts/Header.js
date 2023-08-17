@@ -12,9 +12,9 @@ export default function Header() {
         {/* <!-- Texto --> */}
         <div class="flex flex-col items-end ">
           {/* <!-- Nome --> */}
-          <div class="text-md font-medium ">Unknow Unknow</div>
+          <div class="text-md font-medium ">Jacokash</div>
           {/* <!-- Título --> */}
-          <div class="text-sm font-regular">Student</div>
+          <div class="text-sm font-regular">Admni</div>
         </div>
         {/* <!-- Foto --> */}
         <div class="h-10 w-10 rounded-full cursor-pointer bg-gray-200 border-2 border-blue-400"></div>
