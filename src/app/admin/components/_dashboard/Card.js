@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Card({ title, svgdescription, libelle }) {
+export default function Card({ title, libelle }) {
   return (
     <div class="w-full p-2 lg:w-1/4 md:w-1/2">
       <div class="flex flex-col px-6 py-10 overflow-hidden bg-white hover:bg-gradient-to-br hover:from-purple-400 hover:via-blue-400 hover:to-blue-500 rounded-xl shadow-lg duration-300 hover:shadow-2xl group">
@@ -12,6 +12,7 @@ export default function Card({ title, svgdescription, libelle }) {
               viewBox="0 0 20 20"
               fill="currentColor"
             >
+              
               <path
                 fill-rule="evenodd"
                 d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"

@@ -1,12 +1,13 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 
 export default function Tableau() {
   return (
-    <div class="antialiased font-sans bg-gray-200">
+    <div class=" antialiased font-sans bg-gray-200">
       <div class="container mx-auto px-4 sm:px-8">
         <div class="py-8">
           <div>
-            <h2 class="text-2xl font-semibold leading-tight">Users</h2>
+            <h2 class="text-2xl font-semibold leading-tight"></h2>
           </div>
           <div class="my-2 flex sm:flex-row flex-col">
             <div class="flex flex-row mb-1 sm:mb-0">
@@ -64,16 +65,16 @@ export default function Tableau() {
                 <thead>
                   <tr>
                     <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                      User
+                      Candidat
                     </th>
                     <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                      Rol
+                      Nombre de vote
                     </th>
                     <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                      Created at
+                      Nombre de j'aime
                     </th>
                     <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                      Status
+                      Tendances
                     </th>
                   </tr>
                 </thead>
@@ -96,11 +97,11 @@ export default function Tableau() {
                       </div>
                     </td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      <p class="text-gray-900 whitespace-no-wrap">Admin</p>
+                      <p class="text-gray-900 whitespace-no-wrap">100</p>
                     </td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                       <p class="text-gray-900 whitespace-no-wrap">
-                        Jan 21, 2020
+                        2020
                       </p>
                     </td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -109,7 +110,7 @@ export default function Tableau() {
                           aria-hidden
                           class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
                         ></span>
-                        <span class="relative">Activo</span>
+                        <span class="relative">Bien</span>
                       </span>
                     </td>
                   </tr>
@@ -131,11 +132,11 @@ export default function Tableau() {
                       </div>
                     </td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      <p class="text-gray-900 whitespace-no-wrap">Editor</p>
+                      <p class="text-gray-900 whitespace-no-wrap">100</p>
                     </td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                       <p class="text-gray-900 whitespace-no-wrap">
-                        Jan 01, 2020
+                      100
                       </p>
                     </td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -144,7 +145,7 @@ export default function Tableau() {
                           aria-hidden
                           class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
                         ></span>
-                        <span class="relative">Activo</span>
+                        <span class="relative">Bien</span>
                       </span>
                     </td>
                   </tr>
@@ -166,11 +167,11 @@ export default function Tableau() {
                       </div>
                     </td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      <p class="text-gray-900 whitespace-no-wrap">Editor</p>
+                      <p class="text-gray-900 whitespace-no-wrap">100</p>
                     </td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                       <p class="text-gray-900 whitespace-no-wrap">
-                        Jan 10, 2020
+                      100
                       </p>
                     </td>
                     <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -179,7 +180,7 @@ export default function Tableau() {
                           aria-hidden
                           class="absolute inset-0 bg-orange-200 opacity-50 rounded-full"
                         ></span>
-                        <span class="relative">Suspended</span>
+                        <span class="relative">Moyenne</span>
                       </span>
                     </td>
                   </tr>
@@ -201,11 +202,11 @@ export default function Tableau() {
                       </div>
                     </td>
                     <td class="px-5 py-5 bg-white text-sm">
-                      <p class="text-gray-900 whitespace-no-wrap">Admin</p>
+                      <p class="text-gray-900 whitespace-no-wrap">100</p>
                     </td>
                     <td class="px-5 py-5 bg-white text-sm">
                       <p class="text-gray-900 whitespace-no-wrap">
-                        Jan 18, 2020
+                        18
                       </p>
                     </td>
                     <td class="px-5 py-5 bg-white text-sm">
@@ -214,7 +215,7 @@ export default function Tableau() {
                           aria-hidden
                           class="absolute inset-0 bg-red-200 opacity-50 rounded-full"
                         ></span>
-                        <span class="relative">Inactive</span>
+                        <span class="relative"> Eliminé</span>
                       </span>
                     </td>
                   </tr>
