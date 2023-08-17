@@ -29,7 +29,7 @@ const Login = () => {
     handleShowPassword();
     //console.log(data);
     console.log(email, password);
-    router.push("/");
+    router.push("/admin");
 
     /*
     if (data?.error) {
