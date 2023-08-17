@@ -14,7 +14,9 @@ module.exports = {
       'mobile-down': {'max': '576px'},
       'mobile-up': {'min': '577px'},
     },
+    // colors: {
+    //   // 'primary': '#4290EC'
+    // }
   },
   plugins: [],
 }
-

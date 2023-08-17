@@ -40,7 +40,7 @@ export default function Header(){
             <li> <Link href={'/about'}>  A-propos </Link></li>
           </ul>
         </nav>
-        <div onClick={toggleMenu} className="md:hidden flex">
+        <div onClick={toggleMenu} className="mobile-up:hidden flex">
           {
             isOpen == true ? <IoMdClose size={36} className="text-white" /> :
               <HiOutlineMenuAlt2 size={36} className="text-white" />

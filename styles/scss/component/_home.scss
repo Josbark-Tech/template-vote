@@ -1,11 +1,26 @@
 .container{
     &--intro{
-        background: url('../../../public/img/singer.jpg') round;
-        min-height: 45vh;
+        // background-color: #3a6ea5;
+        min-height: 60vh;
         width: 100%;
 
-        .voice-presentation{
-            
+        &--txt{
+            width: 50%;
+            @media screen and  (max-width: 577px) {
+                width: 99%;
+            }
+        }
+        &--img{
+            width: 50%;
+            @media screen and  (max-width: 577px) {
+                display: none;
+            }
+            img{
+                object-fit: cover;
+            }
+        }
+        @media screen and  (max-width: 577px) {
+            background: url('../../../public/img/singer.jpg') round;
         }
     }
 }
