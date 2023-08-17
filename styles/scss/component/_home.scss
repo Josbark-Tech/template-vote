@@ -1,13 +1,40 @@
 .container{
     &--intro{
-        // background-color: #3a6ea5;
+        background-color: #4290EC;
         min-height: 60vh;
         width: 100%;
-
+        @media screen and  (max-width: 577px) {
+            max-height: 50vh;
+        }
         &--txt{
             width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             @media screen and  (max-width: 577px) {
                 width: 99%;
+            }
+            .name_competition{
+                width: 55%;
+                h2{
+                    font-size: 4rem;
+                    font-weight: 700;
+                    font-style: italic;
+                    border-bottom: 2px solid red;
+                }
+                @media screen and  (max-width: 577px) {
+                    width: 90%;
+                    h2{
+                        font-size: 3rem;
+                    }
+                }
+            }
+            p{
+                width: 55%;
+                font-style: italic;
+                @media screen and  (max-width: 577px) {
+                    width: 90%;
+                }
             }
         }
         &--img{
@@ -20,6 +47,7 @@
             }
         }
         @media screen and  (max-width: 577px) {
+            background-color: #6DB3F2;
             background: url('../../../public/img/singer.jpg') round;
         }
     }
