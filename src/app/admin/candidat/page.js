@@ -5,54 +5,61 @@ import React from "react";
 import Main from "../components/layouts/Page";
 import Tableau from "../components/Tableau";
 import Form from "../components/candidat/Form";
+
 const thead = [
-  { title1: "CANDIDAT " },
-  { title1: "NOMBRE DE VOTE " },
-  { title1: "NOMBRE DE J'AIME " },
-  { title1: "TENDANCES " },
+  { title: "CANDIDAT " },
+  { title: "NOMBRE DE VOTE " },
+  { title: "NOMBRE DE J'AIME " },
+  //{ title: "Nombre de Vote " },
 ];
 
 const dataCandidat = [
   {
     nom: "Vera ",
     prenom: "Carpenter",
-    image: "uploads/001.png",
+    image: "/uploads/001.png",
     like: "2020",
+    vote: "200",
     dislike: "",
   },
   {
     nom: "Vera ",
     prenom: "Carpenter",
-    image: "uploads/005.png",
+    image: "/uploads/005.png",
     like: "2020",
+    vote: "200",
     dislike: "",
   },
   {
     nom: "Vera ",
     prenom: "Carpenter",
-    image: "uploads/006.png",
+    image: "/uploads/006.png",
     like: "2020",
+    vote: "200",
     dislike: "",
   },
   {
     nom: "Vera ",
     prenom: "Carpenter",
-    image: "uploads/008.png",
+    image: "/uploads/008.png",
     like: "2020",
+    vote: "200",
     dislike: "",
   },
   {
     nom: "Alonzo ",
     prenom: "Carpenter",
-    image: "uploads/009.png",
+    image: "/uploads/009.png",
     like: "2020",
+    vote: "200",
     dislike: "",
   },
   {
     nom: "Dana ",
     prenom: "Moore",
-    image: "uploads/0011.png",
+    image: "/uploads/0011.png",
     like: "2020",
+    vote: "200",
     dislike: "",
   },
 ];

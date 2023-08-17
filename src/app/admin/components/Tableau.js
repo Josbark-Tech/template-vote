@@ -6,7 +6,7 @@ import Tbody from "./Tbody";
 
 
 export default function Tableau({data, thead}) {
-  console.log(data, thead);
+  // console.log(data, thead);
   return (
     <div className=" antialiased font-sans bg-gray-200">
       <div className="container mx-auto px-4 sm:px-8">

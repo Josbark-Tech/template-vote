@@ -32,7 +32,7 @@ export default function Tbody({ data }) {
           <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
             <p className="text-gray-900 whitespace-no-wrap">{item.like}</p>
           </td>
-          <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
             <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
               <span
                 aria-hidden
@@ -40,7 +40,7 @@ export default function Tbody({ data }) {
               ></span>
               <span className="relative">Bien</span>
             </span>
-          </td>
+          </td> */}
         </tr>
       ))}
       {/* 

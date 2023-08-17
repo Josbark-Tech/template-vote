@@ -8,10 +8,10 @@ import { BiSolidUser } from "react-icons/bi";
 import Card from "./components/_dashboard/Card";
 // data={dataCandidat} thead={thead}
 const thead = [
-  { title1: "CANDIDAT " },
-  { title1: "NOMBRE DE VOTE " },
-  { title1: "NOMBRE DE J'AIME " },
-  { title1: "TENDANCES " },
+  { title: "CANDIDAT " },
+  { title: "NOMBRE DE VOTE " },
+  { title: "NOMBRE DE J'AIME " },
+  { title: "TENDANCES " },
 ];
 
 const dataCandidat = [
