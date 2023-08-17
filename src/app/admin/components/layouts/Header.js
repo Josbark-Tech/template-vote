@@ -16,7 +16,6 @@ export default function Header() {
           {/* <!-- Título --> */}
           <div class="text-sm font-regular">Student</div>
         </div>
-
         {/* <!-- Foto --> */}
         <div class="h-10 w-10 rounded-full cursor-pointer bg-gray-200 border-2 border-blue-400"></div>
       </div>

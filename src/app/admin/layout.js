@@ -5,6 +5,6 @@ import "../globals.css";
 import "./page.module.css";
 
 export default function RootLayout({ children }) {
-  return <div className>{children}</div>;
+  return <div >{children}</div>;
 
 }
