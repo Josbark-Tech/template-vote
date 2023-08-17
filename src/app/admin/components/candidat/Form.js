@@ -2,9 +2,9 @@ import React from "react";
 // import logo from "../../images/yakka.png";
 export default function Form() {
   return (
-    <section class=" w-full max-w-lg  bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+    <section class=" w-full max-w-lg  bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700">
       <div className="bg-white dark:bg-gray-900">
-        <div className="max-w-2xl px-4 mx-auto lg:py-16">
+        <div className="max-w-2xl px-4 mx-auto ">
           <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">
             Ajouter un candidat
           </h2>
