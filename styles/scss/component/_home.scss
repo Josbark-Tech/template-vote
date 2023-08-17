@@ -51,4 +51,9 @@
             background: url('../../../public/img/singer.jpg') round;
         }
     }
+    &--candidats{
+        &>div{
+            width: 92%;
+        }
+    }
 }

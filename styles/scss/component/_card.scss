@@ -8,3 +8,23 @@
         width: 50%;
     }
 }
+.card{
+    &--candidat{
+        border-radius: 16px;
+        width: 32%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media screen and  (max-width: 577px) {
+            width: 100%;
+        }
+        img{
+            height: 35rem;
+            object-fit: cover;
+            border-radius: 16px;
+            @media screen and  (max-width: 577px) {
+                height: 30rem;
+            }
+        }
+    }
+}
