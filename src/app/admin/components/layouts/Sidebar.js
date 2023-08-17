@@ -4,7 +4,8 @@ import React from "react";
 // import { Link } from "react-router-dom";
 // import Search from "./Search";
 
-const Header = () => {
+
+export default function Siderbar(){
   return (
     // <!-- component -->
     <div class="h-screen w-full bg-white relative flex overflow-hidden">
@@ -126,4 +127,3 @@ const Header = () => {
   );
 };
 
-export default Header;
