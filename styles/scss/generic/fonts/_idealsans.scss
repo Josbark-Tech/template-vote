@@ -1,0 +1,46 @@
+// *----------------------------------*\
+//  Fonts > IdealSans
+// *----------------------------------*/
+
+@mixin FontIdealSans($weight, $with-italic: 0) {
+    $file-name: 'IdealSans';
+    $file-name-italic: 0;
+
+    @if($weight == 100) {
+        $file-name: 'IdealSans-Thin';
+    }
+    @else if($weight == 200) {
+        $file-name: 'IdealSans-ExtraLight';
+    }
+    @else if($weight == 300) {
+        $file-name: 'IdealSans-Light';
+    }
+    @else if($weight == 400) {
+        $file-name: 'IdealSans-Regular';
+        $file-name-italic: 'IdealSans-Italic';
+    }
+    @else if($weight == 500) {
+        $file-name: 'IdealSans-Medium';
+    }
+    @else if($weight == 600) {
+        $file-name: 'IdealSans-SemiBold';
+    }
+    @else if($weight == 700) {
+        $file-name: 'IdealSans-Bold';
+    }
+    @else if($weight == 800) {
+        $file-name: 'IdealSans-ExtraBold';
+    }
+    @else if($weight == 900) {
+        $file-name: 'IdealSans-Black';
+    }
+
+    @include AddFontFace('IdealSans', $weight, $file-name);
+
+    @if($with-italic == 1) {
+        @if $file-name-italic == 0 {
+            $file-name-italic: $file-name + 'Italic';
+        }
+        @include AddFontFace('IdealSans', $weight, $file-name-italic, 'italic')
+    }
+}

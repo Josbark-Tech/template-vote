@@ -1,0 +1,47 @@
+// *----------------------------------**
+//  Elements > ROC
+// *----------------------------------*/
+
+// ul {
+//     padding-left: $space-hecto;
+
+//     li {
+//         margin-bottom: $space-base;
+        
+//         &:before {
+//             content: '\f061';
+//             font: var(--fa-font-solid);
+//             color: $color-secondary;
+//             margin-right: $space-centi;
+//         }
+//     }
+// }
+
+ul:not(.nostyle)  {
+    // padding-left: $space-hecto;
+}
+
+*:not(.nostyle) > li {
+    // margin-bottom: $space-base;
+        
+    &:before {
+        // content: '\f061';
+        // font: var(--fa-font-solid);
+        // color: $color-secondary;
+        // margin-right: $space-centi;
+    }
+}
+
+// Removes the default styles from lists
+// ul.nostyle {
+//     padding-left: 0;
+
+//     li {
+//         list-style: none;
+//         margin-bottom: 0;
+        
+//         &::before {
+//             content: none;
+//         }
+//     }
+// }

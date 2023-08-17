@@ -1,0 +1,14 @@
+// *----------------------------------*\
+//  Fonts > funico
+// *----------------------------------*/
+
+@font-face {
+    font-family: 'funico';
+    src: url($font-path+'funico.eot?egcehd');
+    src: url($font-path+'funico.eot?egcehd#iefix') format('embedded-opentype'),
+      url($font-path+'funico.ttf?egcehd') format('truetype'), url($font-path+'funico.woff?egcehd') format('woff'),
+      url($font-path+'funico.svg?egcehd#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

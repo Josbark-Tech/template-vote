@@ -1,0 +1,37 @@
+header{
+    background-color: #4290EC; //22223b
+    .container-header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo{
+            width: 50%;
+            height: 30%;
+        }
+
+        .nav{
+            ul{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                li{
+                    margin: 0 1rem;
+                }
+            }
+            &--mobile{
+                @media screen and  (min-width: 577px) {
+                    display: none;
+                }
+            }
+        }
+    }
+    .menu-sm{
+        ul{   
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

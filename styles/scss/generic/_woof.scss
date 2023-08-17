@@ -1,0 +1,54 @@
+.woof {
+    ul {
+        padding-left: 0;
+    
+        & > li::before {
+            content: none;
+        }
+    }
+    
+    // Titre
+    &_container_inner h4 {
+        font-size: $font-size-hecto;
+        font-weight: $weight-bold;
+    }
+
+    label {
+        display: inline-block;
+        margin-left: 0;
+        padding: $space-deci $space-base;
+        cursor: pointer;
+        border-radius: 3rem;
+        background: $bg-color-light;
+        color: $color-primary;
+        font-family: $font-family;
+        font-style: normal;
+        font-weight: $weight-medium;
+    }
+
+    &_authors &_list,
+    &_list li {
+        padding: 0 !important;
+        display: inline-block;
+        margin: 0 $space-centi $space-deci 0 !important;
+    }
+    
+    &_authors &_list > span {
+        display: none;
+    }
+}
+
+.woof_price_filter_radio, 
+input[type=checkbox].woof_checkbox_term {
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin: 0;
+    visibility: hidden;
+}
+
+.woof_list .woof_checkbox_term:checked + label, 
+.woof_list .woof_price_filter_radio:checked + span + label {
+    color: $color-white;
+    background-color: $color-primary;
+}
