@@ -1,4 +1,5 @@
 import '../globals.css'
+import './page.module.css'
 import React from "react";
 
 export default function Templates({ children }) {

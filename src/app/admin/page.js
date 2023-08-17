@@ -1,14 +1,33 @@
-"use client"
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
+/*import {
+  collection,
+  addDoc,
+  query,
+  onSnapshot,
+  deleteDoc, 
+  doc,
+  getDoc,
+  querySnapshot,
+ 
+} from "firebase/firestore";
+*/
 
-export default function Candidate() {
-  /*const [item, setItem] = useState([
-    { name: "CoffeePost", price: 4.96 },
-    { name: "Movie", price: 24.96 },
-    { name: "candy", price: 7.96 },
-  ]);*/
-  //Ajouter dans la dase de donné
-  // const addItem = async (event) => {};
+//import { db } from "../firebase";
 
-  return <div>Layoute</div>;
+export default function Home() {
+
+  //setTotal((currentState) => (currentState + items[0].price+ items[1].price+ items[2].price))
+
+  // Add item to database
+
+
+
+
+
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between sm:p-24 p-4">
+    
+    </main>
+  );
 }
