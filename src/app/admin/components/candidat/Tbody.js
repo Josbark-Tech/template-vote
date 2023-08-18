@@ -10,10 +10,10 @@ export default function Tbody({ isLoading, items }) {
   //console.log(items);
   //console.log(data);
 
-  function clickedVote(candidat) {
-    //console.log(item.id);
+  function clickedVote(item) {
+    //console.log(item);
     setShowModalFormElection({ show: true })
-    setIdCandidateElu({ item: candidat })
+    setIdCandidateElu({ item: item })
   }
   return (
     <>

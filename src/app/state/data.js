@@ -3,7 +3,7 @@ import { create } from "zustand";
 const appStore = create((set) => ({
   electeurPotentielNom: "",
   electeurPotentielPhone: "",
-  CandidatElu: null,
+  CandidatElu: {},
   loadingCandidat: false,
   candidat: [],
 
@@ -13,7 +13,7 @@ const appStore = create((set) => ({
   //   eslint-disable-next-line no-label-var, no-labels
   setElecteurPotentielNom: (payload) => set(() => ({ electeurPotentielNom: payload.nom })),
   setElecteurPotentielPhone: (payload) => set(() => ({ electeurPotentielPhone: payload.phone })),
-  setIdCandidateElu: (payload) => set(() => ({ idCandidatElu: payload.item })),
+  setIdCandidateElu: (payload) => set(() => ({ CandidatElu: payload.item })),
   setShowModalFormElection: (payload) => set(() => ({ showModalFormElection: payload.show })),
   setLoadingCandidat: (payload) => set(() => ({ loadingCandidat: payload.isLoading })),
   setCandidat: (payload) => set(() => ({ candidat: payload.data })),
