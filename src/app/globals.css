@@ -18,5 +18,8 @@ body {
   height: 100vh;
   overflow-x: hidden;
 }
+.section {
+  padding: 5rem 10%;
+}
 
 

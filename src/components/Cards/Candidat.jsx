@@ -6,7 +6,7 @@ export default function Candidat({handleClick,item}) {
   // }}
   return (
     <>
-      <div className="max-w-lg rounded overflow-hidden shadow-lg cursor-pointer" onClick={()=>{handleClick(item)} }>
+      <div className="max-w-lg m-4 rounded overflow-hidden shadow-lg cursor-pointer" onClick={()=>{handleClick(item)} }>
         <Image
           src={item.image}
           alt={item.prenom}

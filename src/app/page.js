@@ -24,11 +24,11 @@ export default function Home() {
   const handleClick = (item) => {
     setShowModalFormElection({ show: true });
     setIdCandidateElu({ item: item });
-    console.log(item);
+    // console.log(item);
   };
 
   useEffect(() => {
-    setShowModalFormElection({ show: true });
+    //setShowModalFormElection({ show: true });
     setLoadingCandidat({ isLoading: true });
     const q = query(collection(db, "candidates"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -71,12 +71,14 @@ export default function Home() {
             />
           </div>
         </section>
-        <section className="container container--candidats flex justify-items-center justify-center min-[577px]:p-4">
+        {/* <section className="container container--candidats flex justify-items-center justify-center min-[577px]:p-4"> */}
+        <section className="flex section">
           {loadingCandidat ? (
             <h1>...Chargement</h1>
           ) : (
             <>
-              <div className="flex flex-wrap justify-between">
+              {/* <div className="flex flex-wrap justify-between"> */}
+              <div className="flex flex-wrap">
                 {candidat.map((item, key) => (
                   <Candidat
                     key={key}
