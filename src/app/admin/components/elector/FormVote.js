@@ -1,22 +1,60 @@
 import React, { useState } from "react";
 import appStore from "../../../state/data";
+import {
+  collection,
+  addDoc,
+  // query,
+  // onSnapshot,
+  // deleteDoc,
+  // doc,
+  /*getDoc,
+  querySnapshot,*/
+} from "firebase/firestore";
+
+import { db } from "../../../firebase";
 
 export default function FormVote() {
-  const { setElecteurPotentielNom, setElecteurPotentielPhone,CandidatElu, setShowModalFormElection,} = appStore();
-
+  const {
+    // setElecteurPotentielNom,
+    // setElecteurPotentielPhone,
+    CandidatElu,
+    setShowModalFormElection,
+  } = appStore();
+  const [error, setError] = useState({
+    isErreur: false,
+    message: "",
+  });
   const [electeur, setElecteur] = useState({
     nom: "",
     phone: "",
   });
 
+const validateState = (state,isPhone) => {
+  state.
 
-  const saveVote=()=>{
-    console.log(CandidatElu)
-    console.log(CandidatElu)
-    console.log(electeurPotentielNom,electeurPotentielPhone)
-    setShowModalFormElection({ show: false })
-  }
-  
+
+}
+
+  const handleClickSaveVote = async () => {
+    try {
+      // console.log(CandidatElu);
+      // console.log(electeur);
+      // if (!error.isErreur) {
+        // creer la collection vote
+        await addDoc(collection(db, "votes"), {
+          id_cand: CandidatElu?.id,
+          phone: electeur.phone.trim(),
+          nomElecteur: electeur.nom.trim(),
+        });
+        setElecteur({ nom: "", phone: "" });
+        setShowModalFormElection({ show: false });
+        // console.log(electeur);
+      // }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className=" w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
       <div className="container mx-auto px-4 sm:px-8">
@@ -34,7 +72,7 @@ export default function FormVote() {
               value={electeur.nom}
               onChange={(e) => {
                 setElecteur({ ...electeur, nom: e.target.value });
-                setElecteurPotentielNom({ nom: electeur.nom });
+                // setElecteurPotentielNom({ nom: electeur.nom });
               }}
               placeholder="Entrez votre nom"
               required
@@ -53,7 +91,7 @@ export default function FormVote() {
               value={electeur.phone}
               onChange={(e) => {
                 setElecteur({ ...electeur, phone: e.target.value });
-                setElecteurPotentielPhone({ phone: electeur.phone });
+                // setElecteurPotentielPhone({ phone: electeur.phone });
               }}
               placeholder="Votre numéro de téléphone"
               required
@@ -70,7 +108,7 @@ export default function FormVote() {
             <button
               className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
               type="button"
-              onClick={saveVote}
+              onClick={handleClickSaveVote}
             >
               Save Changes
             </button>

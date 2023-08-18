@@ -67,7 +67,7 @@ export default function Form() {
       SetCandidate([...candidates, newItem]);
 
       if (newItem.nom !== "" && newItem.prenom !== "") {
-        console.log(newItem);
+        //console.log(newItem);
         SetCandidate([...candidates, newItem]);
         await addDoc(collection(db, "candidates"), {
           nom: newItem.nom.trim(),
