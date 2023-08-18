@@ -3,6 +3,8 @@ import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import Thead from "./Thead";
 import Tbody from "./Tbody";
+import ModalVote from "../elector/modale";
+
 
 
 
@@ -11,9 +13,10 @@ export default function Tableau({isLoading, thead,items}) {
   return (
     <div className=" antialiased font-sans bg-gray-200">
       <div className="container mx-auto px-4 sm:px-8">
+        <ModalVote/>
         <div className="py-8">
           <div>
-            <h2 className="text-2xl font-semibold leading-tight"></h2>
+            <h2 className="text-2xl font-semibold leading-tight">Liste de candidant</h2>
           </div>
           <div className="my-2 flex sm:flex-row flex-col">
             <div className="flex flex-row mb-1 sm:mb-0">
