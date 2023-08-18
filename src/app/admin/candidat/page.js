@@ -111,7 +111,6 @@ export default function Candidat() {
               <Tableau
                 items={candidat}
                 isLoading={loadingCandidat}
-                
                 thead={thead}
               />
             </div>
