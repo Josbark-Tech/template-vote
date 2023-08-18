@@ -12,6 +12,8 @@ import {
 } from "firebase/firestore";
 
 import { db } from "../../../firebase";
+import PaymentMethod from "@/app/config/payment.module";
+import CheckPaymentStatus from "@/app/config/check.payment.module";
 
 export default function FormVote() {
   const {
@@ -39,14 +41,22 @@ export default function FormVote() {
       // console.log(CandidatElu);
       // console.log(electeur);
       // if (!error.isErreur) {
+      
+      // console.log(await PaymentMethod(electeur.phone.trim(), 3000,CandidatElu?.id));
+      
+      const response_payment = await PaymentMethod(electeur.phone.trim(), 3000,CandidatElu?.id);
+      const payment_status = await CheckPaymentStatus(response_payment.data.orderNumber);
+      
+      console.log(payment_status);
       // creer la collection vote
-      await addDoc(collection(db, "votes"), {
-        id_cand: CandidatElu?.id,
-        phone: electeur.phone.trim(),
-        nomElecteur: electeur.nom.trim(),
-      });
-      setElecteur({ nom: "", phone: "" });
-      setShowModalFormElection({ show: false });
+      // await addDoc(collection(db, "votes"), {
+      //   id_cand: CandidatElu?.id,
+      //   phone: electeur.phone.trim(),
+      //   nomElecteur: electeur.nom.trim(),
+      // });
+      // setElecteur({ nom: "", phone: "" });
+      // setShowModalFormElection({ show: false });
+
       // console.log(electeur);
       // }
     } catch (error) {
