@@ -3,23 +3,22 @@
 import React from "react";
 import Siderbar from "./Sidebar";
 import Header from "./Header";
+// import Cookies from "js-cookie";
+// import { useRouter ,NextRouter} from "next/router";
 // import { Link } from "react-router-dom";
 // import Search from "./Search";
 
 export default function Page({ children }) {
-  return (
-    // <!-- component -->
-    <div class="h-screen w-full bg-white relative flex overflow-hidden">
-      <Siderbar />
-      <div class="w-full h-full flex flex-col justify-between">
-        {/* <!-- Header --> */}
-        <Header />
-        {/* <!-- Main --> */}
+  // var router = useRouter();
+  // var isLogin = Cookies.get("loggedin");
 
-        <main class="max-w-full h-full flex relative overflow-y-hidden">
-          {/* <!-- Container --> */}
+  return (
+    <div className="h-screen w-full bg-white relative flex overflow-hidden">
+      <Siderbar />
+      <div className="w-full h-full flex flex-col justify-between">
+        <Header />
+        <main className="max-w-full h-full flex relative overflow-y-hidden">
           {children}
-          
         </main>
       </div>
     </div>
