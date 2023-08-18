@@ -5,8 +5,9 @@ import Thead from "./Thead";
 import Tbody from "./Tbody";
 
 
-export default function Tableau({data, thead}) {
-  // console.log(data, thead);
+
+export default function Tableau({isLoading,data, thead,items}) {
+  
   return (
     <div className=" antialiased font-sans bg-gray-200">
       <div className="container mx-auto px-4 sm:px-8">
@@ -49,7 +50,7 @@ export default function Tableau({data, thead}) {
             <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
               <table className="min-w-full leading-normal">
                 <Thead thead={thead} />
-                <Tbody data={data}/>
+                <Tbody data={data} isLoading={isLoading} items={items}/>
               </table>
               <div className="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
                 <span className="text-xs xs:text-sm text-gray-900">

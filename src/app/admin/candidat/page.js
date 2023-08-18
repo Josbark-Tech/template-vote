@@ -1,6 +1,18 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
+import {
+  collection,
+  // addDoc,
+  query,
+  onSnapshot,
+  // deleteDoc, 
+  // doc,
+  /*getDoc,
+  querySnapshot,
+ */
+} from "firebase/firestore";
+import { db } from "../../firebase";
 
 import Main from "../components/layouts/Page";
 import Tableau from "../components/candidat/Tableau";
@@ -10,7 +22,7 @@ const thead = [
   { title: "CANDIDAT " },
   { title: "NOMBRE DE VOTE " },
   { title: "NOMBRE DE J'AIME " },
-  //{ title: "Nombre de Vote " },
+  { title: "ACtion possible" },
 ];
 
 const dataCandidat = [
@@ -65,6 +77,25 @@ const dataCandidat = [
 ];
 
 export default function Candidat() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [items, setItems] = useState([ ]);
+
+  // console.log(items)
+  useEffect(() => {
+    setIsLoading(true);
+    const q = query(collection(db, "candidates"));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      let itemsArr = [];
+      //console.log(querySnapshot);
+      querySnapshot.forEach((doc) => {
+        itemsArr.push({ ...doc.data(), id: doc.id });
+      });
+      setItems(itemsArr);
+      setIsLoading(false);
+   
+      return () => unsubscribe();
+    });
+  }, []);
   return (
     <Main>
       <div className="h-full w-full m-4 flex flex-wrap items-start justify-start rounded-tl grid-flow-col auto-cols-max gap-4 overflow-y-scroll">
@@ -72,7 +103,7 @@ export default function Candidat() {
           <div className="flex flex-wrap ">
             <div className="mx-4">
               {" "}
-              <Tableau data={dataCandidat} thead={thead}/>
+              <Tableau items={items} isLoading={isLoading} data={dataCandidat} thead={thead}/>
             </div>
 
             <Form data={dataCandidat} />

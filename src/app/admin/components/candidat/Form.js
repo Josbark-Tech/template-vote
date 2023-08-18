@@ -20,9 +20,9 @@ import {
 import { db } from "../../../firebase";
 
 export default function Form() {
-  const [uploading, setUploading] = useState(false);
-  const [selectedImage, setSelectedImage] = useState("");
-  const [selectedFile, setSelectedFile] = useState();
+  //const [uploading, setUploading] = useState(false);
+  //const [selectedImage, setSelectedImage] = useState("");
+  //const [selectedFile, setSelectedFile] = useState();
 
   const [candidates, SetCandidate] = useState([]);
   const [newItem, setNewItem] = useState({
@@ -33,31 +33,32 @@ export default function Form() {
     islike: 0,
   });
 
-  const handleUpload = async () => {
-    setUploading(true);
-    try {
-      if (!selectedFile) return;
-      const data = new FormData();
-      data.set('file', selectedFile)
+  //fonction  uploading
+  // const handleUpload = async () => {
+  //   setUploading(true);
+  //   try {
+  //     if (!selectedFile) return;
+  //     const data = new FormData();
+  //     data.set('file', selectedFile)
       
-      const res = await fetch('../../../api/upload',{
-        method:'POST',
-        body: data
-      });
-      console.log(res);
+  //     const res = await fetch('../../../api/upload',{
+  //       method:'POST',
+  //       body: data
+  //     });
+  //     console.log(res);
 
-      if(!res.ok){
-        throw new Error(await res.text());
-      }else{
-        setUploading(false);
-      }
+  //     if(!res.ok){
+  //       throw new Error(await res.text());
+  //     }else{
+  //       setUploading(false);
+  //     }
 
-    } catch (error) {
-      console.log(error);
-    }
-    console.log(uploading)
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  //   console.log(uploading)
     
-  };
+  // };
   // Add candidat to database
   const addItem = async (e) => {
     try {
@@ -90,7 +91,7 @@ export default function Form() {
             {/* <div className="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5"> */}
             <div className=" mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
               <div className="lg:col-span-2 flex">
-                <div className="mx-2">
+                {/* <div className="mx-2">
                   {selectedImage ? (
                     <img
                       className="w-10 h-10  rounded"
@@ -119,7 +120,7 @@ export default function Form() {
                     id="file_input"
                     type="file"
                   />
-                </div>
+                </div> */}
               </div>
               <div>
                 <div className="flex py-3 items-center justify-center w-full">
@@ -199,13 +200,13 @@ export default function Form() {
                 />
               </div>
             </div>
-            <div className="flex items-center my-2  space-x-4">
-              <button
+            <div className="flex  justify-center items-center my-2  space-x-4">
+              {/* <button
                 type="button"
                 className="text-red-600 inline-flex items-center hover:text-white border border-red-600 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900"
               >
                 Modifier
-              </button>
+              </button> */}
               <button
                 onClick={addItem}
                 type="button"

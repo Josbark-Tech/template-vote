@@ -1,8 +1,17 @@
 import React from "react";
-
+import Loading from "../LoadingTable";
 import Image from "next/image";
 
-export default function Tbody({ data }) {
+export default function Tbody({ data, isLoading, items }) {
+  // console.log(isLoading);
+  console.log(items);
+  // console.log(data);
+
+
+  if (isLoading) {
+    return <Loading nbre={4} />;
+  }
+  
   return (
     <tbody>
       {data.map((item, index) => (
@@ -48,145 +57,19 @@ export default function Tbody({ data }) {
               >
                 Modifier
               </button>
+              <button
+                onClick={()=>{console.log(index)}}
+                type="button"
+                className="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Je vote
+              </button>
             </div>
           </td>
         </tr>
       ))}
-      {/* 
-      <tr>
-        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-          <div className="flex items-center">
-            <div className="flex-shrink-0 w-10 h-10">
-              <Image
-                src="/uploads/001.png"
-                alt="Vercel Logo"
-                className="w-full h-full rounded-full"
-                width={100}
-                height={100}
-                priority
-              />
-              
-            </div>
-            <div className="ml-3">
-              <p className="text-gray-900 whitespace-no-wrap">Vera Carpenter</p>
-            </div>
-          </div>
-        </td>
-        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-          <p className="text-gray-900 whitespace-no-wrap">100</p>
-        </td>
-        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-          <p className="text-gray-900 whitespace-no-wrap">2020</p>
-        </td>
-        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-          <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-            <span
-              aria-hidden
-              className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
-            ></span>
-            <span className="relative">Bien</span>
-          </span>
-        </td>
-      </tr>
-      <tr>
-        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-          <div className="flex items-center">
-            <div className="flex-shrink-0 w-10 h-10">
-              <Image
-                src="/uploads/005.png"
-                alt="Vercel Logo"
-                className="w-full h-full rounded-full"
-                width={100}
-                height={100}
-                priority
-              />
-            </div>
-            <div className="ml-3">
-              <p className="text-gray-900 whitespace-no-wrap">Blake Bowman</p>
-            </div>
-          </div>
-        </td>
-        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-          <p className="text-gray-900 whitespace-no-wrap">100</p>
-        </td>
-        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-          <p className="text-gray-900 whitespace-no-wrap">100</p>
-        </td>
-        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-          <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-            <span
-              aria-hidden
-              className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
-            ></span>
-            <span className="relative">Bien</span>
-          </span>
-        </td>
-      </tr>
-      <tr>
-        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-          <div className="flex items-center">
-            <div className="flex-shrink-0 w-10 h-10">
-              <Image
-                src="/uploads/006.png"
-                alt="Vercel Logo"
-                className="w-full h-full rounded-full"
-                width={100}
-                height={100}
-                priority
-              />
-            </div>
-            <div className="ml-3">
-              <p className="text-gray-900 whitespace-no-wrap">Dana Moore</p>
-            </div>
-          </div>
-        </td>
-        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-          <p className="text-gray-900 whitespace-no-wrap">100</p>
-        </td>
-        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-          <p className="text-gray-900 whitespace-no-wrap">100</p>
-        </td>
-        <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-          <span className="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">
-            <span
-              aria-hidden
-              className="absolute inset-0 bg-orange-200 opacity-50 rounded-full"
-            ></span>
-            <span className="relative">Moyenne</span>
-          </span>
-        </td>
-      </tr>
-      <tr>
-        <td className="px-5 py-5 bg-white text-sm">
-          <div className="flex items-center">
-            <div className="flex-shrink-0 w-10 h-10">
-              <img
-                className="w-full h-full rounded-full"
-                src="https://images.unsplash.com/photo-1522609925277-66fea332c575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&h=160&w=160&q=80"
-                alt=""
-              />
-            </div>
-            <div className="ml-3">
-              <p className="text-gray-900 whitespace-no-wrap">Alonzo Cox</p>
-            </div>
-          </div>
-        </td>
-        <td className="px-5 py-5 bg-white text-sm">
-          <p className="text-gray-900 whitespace-no-wrap">100</p>
-        </td>
-        <td className="px-5 py-5 bg-white text-sm">
-          <p className="text-gray-900 whitespace-no-wrap">18</p>
-        </td>
-        <td className="px-5 py-5 bg-white text-sm">
-          <span className="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
-            <span
-              aria-hidden
-              className="absolute inset-0 bg-red-200 opacity-50 rounded-full"
-            ></span>
-            <span className="relative"> Eliminé</span>
-          </span>
-        </td>
-      </tr> */}
     </tbody>
   );
+
+  
 }
