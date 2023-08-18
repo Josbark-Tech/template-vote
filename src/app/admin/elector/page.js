@@ -3,7 +3,7 @@
 import React from "react";
 
 import Main from "../components/layouts/Page";
-import Tableau from "./Tableau";
+import Tableau from "../components/elector/Tableau";
 const thead = [
   { title: "Electeur " },
   { title: "NOMBRE DE Vote " },

@@ -3,7 +3,7 @@
 import React from "react";
 
 import Main from "../components/layouts/Page";
-import Tableau from "../components/candidates/Tableau";
+import Tableau from "../components/candidat/Tableau";
 import Form from "../components/candidat/Form";
 
 const thead = [

@@ -32,15 +32,24 @@ export default function Tbody({ data }) {
           <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
             <p className="text-gray-900 whitespace-no-wrap">{item.like}</p>
           </td>
-          {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-            <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-              <span
-                aria-hidden
-                className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
-              ></span>
-              <span className="relative">Bien</span>
-            </span>
-          </td> */}
+
+          <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+            <div className="flex items-center my-2  space-x-4">
+              <button
+                type="button"
+                className="text-red-600 inline-flex items-center hover:text-white border border-red-600 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900"
+              >
+                Supprimer
+              </button>
+              <button
+                onClick={()=>{console.log(index)}}
+                type="button"
+                className="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Modifier
+              </button>
+            </div>
+          </td>
         </tr>
       ))}
       {/* 
