@@ -4,17 +4,15 @@ import Image from "next/image";
 
 export default function Tbody({ data, isLoading, items }) {
   // console.log(isLoading);
-  console.log(items);
-  // console.log(data);
-
+  //console.log(items);
+  console.log(data);
 
   if (isLoading) {
     return <Loading nbre={4} />;
   }
-  
   return (
     <tbody>
-      {data.map((item, index) => (
+      {items.map((item, index) => (
         <tr key={index}>
           <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
             <div className="flex items-center">
@@ -30,7 +28,7 @@ export default function Tbody({ data, isLoading, items }) {
               </div>
               <div className="ml-3">
                 <p className="text-gray-900 whitespace-no-wrap">
-                  {item.prenom}
+                  {item.prenom} {item.nom}
                 </p>
               </div>
             </div>
@@ -39,7 +37,7 @@ export default function Tbody({ data, isLoading, items }) {
             <p className="text-gray-900 whitespace-no-wrap">{item.vote}</p>
           </td>
           <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-            <p className="text-gray-900 whitespace-no-wrap">{item.like}</p>
+            <p className="text-gray-900 whitespace-no-wrap">{item.aime}</p>
           </td>
 
           <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -51,14 +49,18 @@ export default function Tbody({ data, isLoading, items }) {
                 Supprimer
               </button>
               <button
-                onClick={()=>{console.log(index)}}
+                onClick={() => {
+                  console.log(index);
+                }}
                 type="button"
                 className="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Modifier
               </button>
               <button
-                onClick={()=>{console.log(index)}}
+                onClick={() => {
+                  console.log(index);
+                }}
                 type="button"
                 className="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
@@ -70,6 +72,4 @@ export default function Tbody({ data, isLoading, items }) {
       ))}
     </tbody>
   );
-
-  
 }

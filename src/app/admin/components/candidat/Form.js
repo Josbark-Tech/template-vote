@@ -29,8 +29,8 @@ export default function Form() {
     nom: "",
     prenom: "",
     image: "",
-    like: 0,
-    islike: 0,
+    aime: 0,
+    vote: 0,
   });
 
   //fonction  uploading
@@ -72,11 +72,11 @@ export default function Form() {
         await addDoc(collection(db, "candidates"), {
           nom: newItem.nom.trim(),
           prenom: newItem.prenom.trim(),
-          image: "",
-          like: 0,
-          islike: 0,
+          image: "/uploads/001.png",
+          aime: 0,
+          vote: 0,
         });
-        setNewItem({ nom: "", prenom: "", like: 0, islike: 0 });
+        setNewItem({ nom: "", prenom: "", aime: 0, vote: 0 });
       }
     } catch (e) {}
   };
