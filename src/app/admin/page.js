@@ -11,7 +11,7 @@ const thead = [
   { title: "CANDIDAT " },
   { title: "NOMBRE DE VOTE " },
   { title: "NOMBRE DE J'AIME " },
-  { title: "TENDANCES " },
+  // { title: "TENDANCES " },
 ];
 
 const dataCandidat = [
