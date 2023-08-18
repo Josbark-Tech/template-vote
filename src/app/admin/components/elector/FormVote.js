@@ -20,35 +20,34 @@ export default function FormVote() {
     CandidatElu,
     setShowModalFormElection,
   } = appStore();
-  const [error, setError] = useState({
-    isErreur: false,
-    message: "",
-  });
+  // const [error, setError] = useState({
+  //   isErreur: false,
+  //   message: "",
+  // });
   const [electeur, setElecteur] = useState({
     nom: "",
     phone: "",
   });
 
-const validateState = (state,isPhone) => {
-  state.
+  // const validateState = (state,isPhone) => {
+  //   state.
 
-
-}
+  // }
 
   const handleClickSaveVote = async () => {
     try {
       // console.log(CandidatElu);
       // console.log(electeur);
       // if (!error.isErreur) {
-        // creer la collection vote
-        await addDoc(collection(db, "votes"), {
-          id_cand: CandidatElu?.id,
-          phone: electeur.phone.trim(),
-          nomElecteur: electeur.nom.trim(),
-        });
-        setElecteur({ nom: "", phone: "" });
-        setShowModalFormElection({ show: false });
-        // console.log(electeur);
+      // creer la collection vote
+      await addDoc(collection(db, "votes"), {
+        id_cand: CandidatElu?.id,
+        phone: electeur.phone.trim(),
+        nomElecteur: electeur.nom.trim(),
+      });
+      setElecteur({ nom: "", phone: "" });
+      setShowModalFormElection({ show: false });
+      // console.log(electeur);
       // }
     } catch (error) {
       console.log(error);
