@@ -6,7 +6,7 @@ import Tbody from "./Tbody";
 
 
 
-export default function Tableau({isLoading,data, thead,items}) {
+export default function Tableau({isLoading, thead,items}) {
   
   return (
     <div className=" antialiased font-sans bg-gray-200">
@@ -50,7 +50,7 @@ export default function Tableau({isLoading,data, thead,items}) {
             <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
               <table className="min-w-full leading-normal">
                 <Thead thead={thead} />
-                <Tbody data={data} isLoading={isLoading} items={items}/>
+                <Tbody  isLoading={isLoading} items={items}/>
               </table>
               <div className="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between          ">
                 <span className="text-xs xs:text-sm text-gray-900">

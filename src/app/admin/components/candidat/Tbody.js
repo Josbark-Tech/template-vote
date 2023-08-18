@@ -2,10 +2,10 @@ import React from "react";
 import Loading from "../LoadingTable";
 import Image from "next/image";
 
-export default function Tbody({ data, isLoading, items }) {
+export default function Tbody({ isLoading, items }) {
   // console.log(isLoading);
   //console.log(items);
-  console.log(data);
+  //console.log(data);
 
   if (isLoading) {
     return <Loading nbre={4} />;

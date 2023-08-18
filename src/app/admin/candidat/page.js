@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import {
   collection,
   // addDoc,
   query,
   onSnapshot,
-  // deleteDoc, 
+  // deleteDoc,
   // doc,
   /*getDoc,
   querySnapshot,
@@ -14,6 +14,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../../firebase";
 
+import appStore from "../../state/data";
 import Main from "../components/layouts/Page";
 import Tableau from "../components/candidat/Tableau";
 import Form from "../components/candidat/Form";
@@ -77,12 +78,14 @@ const dataCandidat = [
 ];
 
 export default function Candidat() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [items, setItems] = useState([ ]);
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [items, setItems] = useState([ ]);
+  const { setCandidat, candidat, setLoadingCandidat, loadingCandidat } =
+    appStore();
 
-  // console.log(items)
   useEffect(() => {
-    setIsLoading(true);
+    // setIsLoading(true);
+    setLoadingCandidat({ isLoading: true });
     const q = query(collection(db, "candidates"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let itemsArr = [];
@@ -90,12 +93,14 @@ export default function Candidat() {
       querySnapshot.forEach((doc) => {
         itemsArr.push({ ...doc.data(), id: doc.id });
       });
-      setItems(itemsArr);
-      setIsLoading(false);
-   
+      // setItems(itemsArr);
+      setCandidat({ data: itemsArr });
+      // setIsLoading(false);
+      setLoadingCandidat({ isLoading: false });
+
       return () => unsubscribe();
     });
-  }, []);
+  }, [setCandidat, setLoadingCandidat]);
   return (
     <Main>
       <div className="h-full w-full m-4 flex flex-wrap items-start justify-start rounded-tl grid-flow-col auto-cols-max gap-4 overflow-y-scroll">
@@ -103,7 +108,12 @@ export default function Candidat() {
           <div className="flex flex-wrap ">
             <div className="mx-4">
               {" "}
-              <Tableau items={items} isLoading={isLoading} data={dataCandidat} thead={thead}/>
+              <Tableau
+                items={candidat}
+                isLoading={loadingCandidat}
+                
+                thead={thead}
+              />
             </div>
 
             <Form data={dataCandidat} />
