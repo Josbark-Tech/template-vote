@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import React, { useEffect } from "react";
 import Header from "@/components/commons/header";
@@ -27,6 +28,7 @@ export default function Home() {
   };
 
   useEffect(() => {
+    setShowModalFormElection({ show: true });
     setLoadingCandidat({ isLoading: true });
     const q = query(collection(db, "candidates"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -45,6 +47,7 @@ export default function Home() {
 
   return (
     <>
+      <ModalElector />
       <Header />
       <main>
         <section className="container--intro flex items-center max-[576px]:p-4 mb-2">
@@ -73,7 +76,6 @@ export default function Home() {
             <h1>...Chargement</h1>
           ) : (
             <>
-              <ModalElector />
               <div className="flex flex-wrap justify-between">
                 {candidat.map((item, key) => (
                   <Candidat

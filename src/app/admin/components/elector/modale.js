@@ -5,7 +5,7 @@ import FormVote from "./FormVote";
 export default function Modal() {
   //const [showModal, setShowModal] = React.useState(false);
   // const { showModalFormElection,CandidatElu, setShowModalFormElection,
-  const { showModalFormElection ,CandidatElu} = appStore();
+  const { showModalFormElection, CandidatElu } = appStore();
 
   // const saveVote=()=>{
   //   console.log(CandidatElu)
@@ -18,8 +18,9 @@ export default function Modal() {
     <>
       {showModalFormElection && (
         <>
-          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-            <div className="relative w-auto my-6 mx-auto max-w-3xl">
+          <div style={{ position:'absolute',top:0,left:0,bottom:0,right:0}} className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+            <div className="relative w-auto my-6 mx-auto w-3xl" style={{ width: '659px',height: '559px'}}>
+              {/* <div className="relative w-auto my-6 mx-auto max-w-3xl"> */}
               {/*content*/}
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 {/*header*/}
