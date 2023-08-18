@@ -4,13 +4,17 @@ import Image from "next/image";
 import appStore from "../../../state/data";
 
 export default function Tbody({ isLoading, items }) {
-  const { setShowModalFormElection } = appStore();
+  const { setShowModalFormElection,setIdCandidateElu } = appStore();
 
   // console.log(isLoading);
   //console.log(items);
   //console.log(data);
 
-  //if (isLoading) return;
+  function clickedVote(item) {
+    //console.log(item.id);
+    setShowModalFormElection({ show: true })
+    setIdCandidateElu({ id: item.id })
+  }
   return (
     <>
       {isLoading ? (
@@ -63,7 +67,7 @@ export default function Tbody({ isLoading, items }) {
                     Modifier
                   </button>
                   <button
-                    onClick={() => setShowModalFormElection({ show: true })}
+                    onClick={()=>{clickedVote(item)}}
                     type="button"
                     className="px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
