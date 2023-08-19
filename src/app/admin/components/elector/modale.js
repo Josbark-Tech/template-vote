@@ -1,6 +1,6 @@
 import React from "react";
 import appStore from "../../../state/data";
-import FormVote from "./FormVote";
+import Form from "./Formulaire";
 
 export default function Modal() {
   //const [showModal, setShowModal] = React.useState(false);
@@ -39,7 +39,7 @@ export default function Modal() {
                 </div>
                 {/*body*/}
                 <div className="relative p-6 flex-auto">
-                  <FormVote />
+                  <Form />
                 </div>
                 {/*footer*/}
                 {/* <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">

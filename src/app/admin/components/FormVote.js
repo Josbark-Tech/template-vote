@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as Yup from "yup";
 import { useFormik, Form, FormikProvider } from "formik";
-import appStore from "../../../state/data";
+import appStore from "../../state/data";
 import {
   collection,
   addDoc,
@@ -13,7 +13,7 @@ import {
   querySnapshot,*/
 } from "firebase/firestore";
 
-import { db } from "../../../firebase";
+import { db } from "../../firebase";
 
 export default function FormVote() {
   const { CandidatElu, setShowModalFormElection } = appStore();
