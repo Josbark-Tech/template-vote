@@ -72,7 +72,7 @@ export default function Form() {
         await addDoc(collection(db, "candidates"), {
           nom: newItem.nom.trim(),
           prenom: newItem.prenom.trim(),
-          image: "/uploads/001.png",
+          image: "/uploads/image_default.png",
           aime: 0,
           vote: 0,
         });
@@ -125,7 +125,7 @@ export default function Form() {
               <div>
                 <div className="flex py-3 items-center justify-center w-full">
                   <label
-                    for="dropzone-file"
+                    // for="dropzone-file"
                     className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
                   >
                     <div className="flex flex-col items-center justify-center pt-5 pb-6">
@@ -161,7 +161,7 @@ export default function Form() {
             <div className="flex items-center my-2 space-x-4">
               <div className="w-full">
                 <label
-                  for="price"
+                  // for="price"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Votre prénom
@@ -182,7 +182,7 @@ export default function Form() {
             <div className="flex items-center my-2 space-x-4">
               <div className="w-full">
                 <label
-                  for="price"
+                  // for="price"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Votre nom
