@@ -64,6 +64,7 @@ export default function Home() {
             <Image
               src="/img/singer.jpg"
               width={600}
+              loading="lazy"
               height={600}
               alt="Chanteur avec un micro"
               style={{ objectFit: "cover" }}
