@@ -67,18 +67,19 @@ export default function FormVote() {
          save(dataElecteur);
         setMessageErreur("La transaction est traiter avec succès");
         setNomLottie(lottiesuccess);
+        setStepProcess(0);
       } else if (transaction.status === "1") {
         // console.log("La transaction qui n’a pas abouti");
         setStepProcess(1);
         setMessageErreur("La transaction n’a pas abouti");
-        setNomLottie(lottiesuccess);
-        // setNomLottie(lottieEchec);
+     
+        setNomLottie(lottieEchec);
       } else if (transaction.status === "2") {
         // console.log("Avant 5 sec", dataCode.orderNumber);
         // console.log("Le paiement est en attente");
         setStepProcess(2);
         setMessageErreur("Le paiement est en attente");
-        toWait(5000);
+        toWait(1000);
         processPaiement(dataCode,dataElecteur);
       } else if (transaction.status === "3") {
         setStepProcess(3);
