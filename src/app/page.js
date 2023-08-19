@@ -7,7 +7,7 @@ import Footer from "@/components/commons/footer";
 import Image from "next/image";
 import Candidat from "@/components/Cards/Candidat";
 import appStore from "./state/data";
-import ModalElector from "./admin/components/elector/modale";
+import ModalElector from "./admin/components/Modal";
 import { collection, query, onSnapshot } from "firebase/firestore";
 import { db } from "./firebase";
 
