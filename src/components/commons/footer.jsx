@@ -1,8 +1,3 @@
-
 export default function Footer() {
-    return (
-      <footer className="footer p-6">
-  
-      </footer>
-    );
-  }
+  return <footer className="footer p-6"></footer>;
+}

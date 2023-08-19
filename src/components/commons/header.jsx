@@ -17,10 +17,10 @@ export default function Header(){
 
   const baseStyleMobile =
     "font-light p-5 text-2xl text-white ";
-  const baseStyle =
-    "font-bold  text-white hover:border-b-2 border-white hover:border-white  text-white border-b-2 text-white";
+  // const baseStyle =
+  //   "font-bold  text-white hover:border-b-2 border-white hover:border-white  text-white border-b-2 text-white";
   const hoverStyleMobile = "hover:text-white font-normal  p-5 text-2xl";
-  const hoverStyle = "hover:text-white font-normal text-white";
+  // const hoverStyle = "hover:text-white font-normal text-white";
 
   return(
     <header className="header">
