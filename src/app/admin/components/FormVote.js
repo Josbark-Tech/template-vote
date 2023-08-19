@@ -6,33 +6,30 @@ import { useFormik, Form, FormikProvider } from "formik";
 import appStore from "../../state/data";
 import PaymentMethod from "@/app/config/payment.module";
 import CheckPaymentStatus from "@/app/config/check.payment.module";
-import lottieEchec from "../../../../public/animation_echec.json";
+// import lottieEchec from "../../../../public/animation_echec.json";
 import lottieProcess from "../../../../public/animation_process.json";
-import lottiesuccess from "../../../../public/animation_successfull.json";
+import lottiesuccess from "../../../../public/animation_succes.json";
 // import lottieProcess1 from "../../../../public/animation_process1.json";
 
-// import {
-//   collection,
-//   addDoc,
-// query,
-// onSnapshot,
-// deleteDoc,
-// doc,
-/*getDoc,
-  querySnapshot,*/
-// } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+} from "firebase/firestore";
 
-// import { db } from "../../firebase";
+import { db } from "../../firebase";
 
 export default function FormVote() {
-  const { CandidatElu, setShowModalFormElection } = appStore();
+  const {
+    CandidatElu,
+    setShowModalFormElection,
+  } = appStore();
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
   const [showLottie, setShowLottie] = useState(false);
   const [nomLottie, setNomLottie] = useState(lottieProcess);
   const [messageErreur, setMessageErreur] = useState("");
   const [stepProcess, setStepProcess] = useState(2);
-
+  
 
   // .matches(/^(\+243|0)[0-9]{9}$/g, "+243813030011 ou 0813030011")
   const registerSchema = Yup.object().shape({
@@ -53,57 +50,88 @@ export default function FormVote() {
     while (Date.now() - timeout < duration) {}
   };
 
-  const processPaiement = async (dataCode) => {
-    console.log("Transaction  avec succès. ", dataCode);
-    console.log(`Transaction  avec succès. ${dataCode.orderNumber}`);
+  const processPaiement = async (dataCode,dataElecteur) => {
+    //console.log("Transaction  avec succès. ", dataCode);
+    //console.log(`Transaction  avec succès. ${dataCode.orderNumber}`);
 
     const result = await CheckPaymentStatus(dataCode.orderNumber);
-
+        
     if (result.data.code === "0") {
       const { data } = result;
-      console.log("data 0 ");
-      console.log("message 0", data.message);
+      // console.log("data 0 ");
+      // console.log("message 0", data.message);
       const { transaction } = data;
-      console.log("Status ", transaction.status);
+      // console.log("Status ", transaction.status);
       if (transaction.status === "0") {
-       
-        console.log("La transaction est traiter avec succès");
+        // console.log("La transaction est traiter avec succès");
+         save(dataElecteur);
         setMessageErreur("La transaction est traiter avec succès");
         setNomLottie(lottiesuccess);
       } else if (transaction.status === "1") {
-        console.log("La transaction qui n’a pas abouti");
+        // console.log("La transaction qui n’a pas abouti");
         setStepProcess(1);
-        setMessageErreur("La transaction qui n’a pas abouti");
-        setNomLottie(lottieEchec);
+        setMessageErreur("La transaction n’a pas abouti");
+        setNomLottie(lottiesuccess);
+        // setNomLottie(lottieEchec);
       } else if (transaction.status === "2") {
-        console.log("Avant 5 sec", dataCode.orderNumber);
-        console.log("Le paiement est en attente");
+        // console.log("Avant 5 sec", dataCode.orderNumber);
+        // console.log("Le paiement est en attente");
         setStepProcess(2);
         setMessageErreur("Le paiement est en attente");
         toWait(5000);
-        processPaiement(dataCode);
+        processPaiement(dataCode,dataElecteur);
       } else if (transaction.status === "3") {
-        console.log("Le paiement va être remboursé au client");
+        setStepProcess(3);
+        setMessageErreur("Le paiement va être remboursé au client");
+        // console.log("Le paiement va être remboursé au client");
       } else if (transaction.status === "4") {
-        console.log("Le paiement a été remboursé au client");
+        // console.log("Le paiement a été remboursé au client");
+        setStepProcess(4);
+        setMessageErreur("Le paiement a été remboursé au client");
       } else if (transaction.status === "5") {
-        console.log("La transaction a été annulée par le marchand");
+        setStepProcess(5);
+        setMessageErreur("La transaction a été annulée par le marchand");
+        // console.log("La transaction a été annulée par le marchand");
       }
     } else if (result.data.code === "1") {
-      console.log("message 1", data.message);
+      setMessageErreur(data.message);
+      // console.log("message 1", data.message);
     }
     console.log("Finis");
   };
 
-  const verirication = (responseResult) => {
-    const { data } = responseResult;
+  // Enregistrer les inforamations
+  const save = async (dataElecteur) => {
+    try {
+      // creer la collection votes
+       await addDoc(collection(db, "votes"), {
+        id_cand: CandidatElu?.id,
+        phone: dataElecteur.phone,
+        nombreVote: dataElecteur.nombreVote,
+        nomElecteur: dataElecteur.nom,
+      });
+      // console.log("===========================");
+      // console.log(CandidatElu?.id);
+      // console.log(electeurPotentielNom);
+      // console.log(electeurPotentielPhone);
+      // console.log(electeurNombreVote);
+      // console.log(dataElecteur);
 
+      // console.log("===========================");
+      // cleanState();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const verirication = (responseResult, dataElecteur) => {
+    const { data } = responseResult;
+    // console.log(dataElecteur);
     switch (data.code) {
       case "0":
-        processPaiement(data);
+        processPaiement(data,dataElecteur);
         break;
       case "1":
-        processPaiement(data);
+        processPaiement(data,dataElecteur);
         // code block
         break;
       default:
@@ -119,17 +147,31 @@ export default function FormVote() {
     validationSchema: registerSchema,
     onSubmit: async (data) => {
       try {
+        // console.log(data);
         setLoader(true);
         setShowLottie(true);
         let montant = parseInt(data.nombreVote) * 500;
+        // setElecteurNombreDeVote({ nbr: 'data.nombreVote' });
+        // setElecteurPotentielNom({ nom: 'data.nom' });
+        // setElecteurPotentielPhone({ phone: 'data.phone' });
+        // await setElector((current)=>({ ...current, nom:  'data.nom' }));
+        // setElector({ ...elector, phone: 'data.phone'});
+        // setElector({ ...elector, nombreVote: 'data.nombreVote' });
+
         const response_payment = await PaymentMethod(
           data.phone,
           montant,
           CandidatElu?.id
         );
-        console.log(response_payment);
+        // console.log(electeurPotentielNom);
+        // console.log(electeurPotentielPhone);
+        // console.log(electeurNombreVote);
+        // console.log(data);
+        // console.log(elector);
+        //console.log(response_payment);
         setLoader(false);
-        verirication(response_payment);
+        verirication(response_payment, data);
+
         // await addDoc(collection(db, "votes"), {
         //   id_cand: CandidatElu?.id,
         //   phone: data.phone,
@@ -142,7 +184,7 @@ export default function FormVote() {
         setError(
           "Une erreur est survenue lors de la soumission \n du formulaire veuilllez verifier votre connexion internet et \n réessayer"
         );
-        console.log(error);
+        // console.log(error);
       }
     },
   });
