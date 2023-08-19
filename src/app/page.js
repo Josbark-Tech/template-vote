@@ -47,9 +47,9 @@ export default function Home() {
 
   return (
     <>
-      <ModalElector />
       <Header />
       <main>
+        <ModalElector />
         <section className="container--intro flex items-center max-[576px]:p-4 mb-2">
           <div className="container--intro--txt p-8 text-white">
             <div className="name_competition">
