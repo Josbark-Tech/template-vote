@@ -1,27 +1,23 @@
 import axios from "axios";
 
-const wait = milliseconds => new Promise(
-  (res, rej) => setTimeout(
-    () => rej(new Error(`timed out after ${milliseconds} ms`)),
-    milliseconds
-  )
-);
+export default async function CheckPaymentStatus(orderNumber) {
+  // const fetchOrTimeout = await Promise.race([
+  //   axios.get("https://backend.flexpay.cd/api/rest/v1/check/" + orderNumber, {
+  //     headers: {
+  //       Authorization:
+  //         "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJcL2xvZ2luIiwicm9sZXMiOlsiTUVSQ0hBTlQiXSwiZXhwIjoxNzQ2MTg4NDU1LCJzdWIiOiJmYWRhOTA5MDVmY2EzNDA1OWQzMmFjOWQ1ZWY3MWY1OCJ9.wQyYxNDRQlGPos8oIXrv1E3fJ3DoYWRYI6OQt_AszAc",
+  //     },
+  //   }),
+   
 
-export default async function CheckPaymentStatus(orderNumber){
 
-  const fetchOrTimeout = await Promise.race([
-    axios.get('https://backend.flexpay.cd/api/rest/v1/check/'+orderNumber,{
-      headers: {
-        Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJcL2xvZ2luIiwicm9sZXMiOlsiTUVSQ0hBTlQiXSwiZXhwIjoxNzQ2MTg4NDU1LCJzdWIiOiJmYWRhOTA5MDVmY2EzNDA1OWQzMmFjOWQ1ZWY3MWY1OCJ9.wQyYxNDRQlGPos8oIXrv1E3fJ3DoYWRYI6OQt_AszAc"
-      }
-    }), wait(10 * 60 * 1000)]);
+  const response = await axios.get('https://backend.flexpay.cd/api/rest/v1/check/'+orderNumber,{
+    headers: {
+      Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJcL2xvZ2luIiwicm9sZXMiOlsiTUVSQ0hBTlQiXSwiZXhwIjoxNzQ2MTg4NDU1LCJzdWIiOiJmYWRhOTA5MDVmY2EzNDA1OWQzMmFjOWQ1ZWY3MWY1OCJ9.wQyYxNDRQlGPos8oIXrv1E3fJ3DoYWRYI6OQt_AszAc"
+    }
+  });
 
-  // const response = await axios.get('https://backend.flexpay.cd/api/rest/v1/check/'+orderNumber,{
-  //   headers: {
-  //     Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJcL2xvZ2luIiwicm9sZXMiOlsiTUVSQ0hBTlQiXSwiZXhwIjoxNzQ2MTg4NDU1LCJzdWIiOiJmYWRhOTA5MDVmY2EzNDA1OWQzMmFjOWQ1ZWY3MWY1OCJ9.wQyYxNDRQlGPos8oIXrv1E3fJ3DoYWRYI6OQt_AszAc"
-  //   }
-  // });
-
-  // return response.data.transaction.status;
-  return fetchOrTimeout;
+  return response;
+  //return response.data.transaction.status;
+  
 }
