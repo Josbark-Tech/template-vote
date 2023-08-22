@@ -1,7 +1,7 @@
 import React from "react";
 import appStore from "../../state/data";
 import Form from "./FormVote";
-import { Dialog, DialogBody } from "@material-tailwind/react";
+// import { Dialog, DialogBody } from "@material-tailwind/react";
 
 export default function Modal() {
   //const [showModal, setShowModal] = React.useState(false);
@@ -11,20 +11,7 @@ export default function Modal() {
   return (
     <>
       {showModalFormElection && (
-        // <>
-        // <Dialog open={showModalFormElection} handler={showModalFormElection}>
-        //   <DialogBody>
-        //     <div
-        //       // style={{
-        //       //   position: "absolute",
-        //       //   top: 0,
-        //       //   left: 0,
-        //       //   bottom: 0,
-        //       //   right: 0,
-                
-        //       // }}
-        //       // className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-        //     >
+
         //       <div className="relative my-6 mx-auto" style={{ width: '659px',height: '559px'}}>
         //         {/* <div className="relative w-auto my-6 mx-auto w-3xl" > */}
         //         {/* <div className="relative w-auto my-6 mx-auto max-w-3xl"> */}
@@ -57,11 +44,13 @@ export default function Modal() {
         // </>
         <>
           <div
-            style={{          
-            }}
+            style={{}}
             className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
           >
-            <div className="relative my-6 mx-auto" style={{ width: '659px',height: '559px'}}>
+            <div
+              className="relative my-6 mx-auto"
+              style={{ width: "659px", height: "559px" }}
+            >
               {/* <div className="relative w-auto my-6 mx-auto w-3xl" > */}
               {/* <div className="relative w-auto my-6 mx-auto max-w-3xl"> */}
               {/*content*/}
