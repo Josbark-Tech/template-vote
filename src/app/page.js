@@ -6,6 +6,7 @@ import "../../styles/scss/main.scss";
 import Footer from "@/components/commons/footer";
 import Image from "next/image";
 import Candidat from "@/components/Cards/Candidat";
+import LoadingComponent from "./loading";
 import appStore from "./state/data";
 import ModalElector from "./admin/components/Modal";
 import { collection, query, onSnapshot } from "firebase/firestore";
@@ -49,7 +50,6 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <ModalElector />
         <section className="container--intro flex items-center max-[576px]:p-4 mb-2">
           <div className="container--intro--txt p-8 text-white">
             <div className="name_competition">
@@ -74,7 +74,7 @@ export default function Home() {
         {/* <section className="container container--candidats flex justify-items-center justify-center min-[577px]:p-4"> */}
         <section className="flex section">
           {loadingCandidat ? (
-            <h1>...Chargement</h1>
+            <LoadingComponent />
           ) : (
             <>
               {/* <div className="flex flex-wrap justify-between"> */}
@@ -93,6 +93,7 @@ export default function Home() {
         </section>
       </main>
       <Footer />
+      <ModalElector />
     </>
   );
 }
