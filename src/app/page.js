@@ -57,14 +57,14 @@ export default function Home() {
               <p></p>
             </div>
             <p>
-              A la recherche des meilleurs tallents Gospel dans les differentes
-              villes de la Republique Democratique du Congo
+            À la recherche des meilleurs talents Gospel dans la ville de Mbanza-Ngungu, République Démocratique du Congo
             </p>
           </div>
           <div className="container--intro--img">
             <Image
               src="/img/singer.jpg"
               width={600}
+              loading="lazy"
               height={600}
               alt="Chanteur avec un micro"
               style={{ objectFit: "cover" }}

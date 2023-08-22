@@ -28,6 +28,7 @@ export default function Header(){
         <h1>
           <Image
             className="logo"
+            loading="lazy"
             src={'/img/logo_the_gospel_voice.png'}
             width={150}
             height={100}

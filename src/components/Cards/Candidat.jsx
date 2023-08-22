@@ -1,14 +1,18 @@
+/* eslint-disable indent */
 import Image from "next/image";
+// import { LazyLoadImage } from 'react-lazy-load-image-component';
+// import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export default function Candidat({handleClick,item}) {
 
   return (
     <>
       <div className="max-w-lg m-4 rounded overflow-hidden shadow-lg cursor-pointer" onClick={()=>{handleClick(item)} }>
-        <Image
+      <Image
           src={item.image}
           alt={item.prenom}
           width={500}
+          loading="lazy"
           height={500}
           className="w-full"
         />
