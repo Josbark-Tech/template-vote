@@ -18,8 +18,8 @@ jobs:
     
     - name: Build Project
       run: |
-        npm install
-        npm run build
+        yarn
+        yarn build
 
     - name:  Sync files
       uses: actions/checkout@v3  
